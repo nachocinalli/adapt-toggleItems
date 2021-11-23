@@ -1,0 +1,274 @@
+{
+	"type": "object",
+	"$schema": "http://json-schema.org/draft-04/schema",
+	"id": "http://jsonschema.net",
+	"$ref": "http://localhost/plugins/content/component/model.schema",
+	"globals": {
+		"ariaRegion": {
+			"type": "string",
+			"required": true,
+			"default": "Toggle items. Select the checkbox to switch between states.",
+			"inputType": "Text",
+			"validators": [],
+			"translatable": true
+		}
+	},
+	"properties": {
+		"_supportedLayout": {
+			"type": "string",
+			"required": true,
+			"enum": [
+				"full-width",
+				"half-width",
+				"both"
+			],
+			"default": "half-width",
+			"editorOnly": true
+		},
+		"instruction": {
+			"type": "string",
+			"required": false,
+			"default": "",
+			"inputType": "Text",
+			"validators": [],
+			"help": "This is the instruction text",
+			"translatable": true
+		},
+		"_setCompletionOn": {
+			"type": "string",
+			"required": false,
+			"default": "allItems",
+			"title": "Set completion on:",
+			"enum": [
+				"inview",
+				"allItems"
+			],
+			"inputType": {
+				"type": "Select",
+				"options": [
+					"inview",
+					"allItems"
+				]
+			},
+			"validators": [],
+			"help": "Whether completion is based on the learner having viewed all the items - or just having viewed the component"
+		},
+		"_animateItems": {
+			"type": "boolean",
+			"required": false,
+			"title": "Animate Items",
+			"inputType": "Checkbox",
+			"validators": [],
+			"help": "Animate the items into view",
+			"translatable": false
+		},
+		
+		"_percentInviewVertical": {
+			"type": "number",
+			"required": false,
+			"default": 20,
+			"isSetting": true,
+			"title": "Percent in view",
+			"inputType": "Number",
+			"validators": [
+				"number"
+			],
+			"help": "Controls what percentage of the items height needs to be in the viewport in order for the items to animate"
+		},
+		"_transitionSpeed": {
+			"type": "number",
+			"required": false,
+			"default": 200,
+			"isSetting": true,
+			"title": "Transition speed",
+			"inputType": "Number",
+			"validators": [
+				"number"
+			],
+			"help": ""
+		},
+		"_columns": {
+			"type": "number",
+			"required": false,
+			"default": 0,
+			"title": "Columns",
+			"inputType": "Number",
+			"validators": ["number"],
+			"help": "Set the number of columns. If value is '0', component uses the default layout."
+		},
+		"_isSequential": {
+			"type": "boolean",
+			"required": false,
+			"title": "Is Sequential?",
+			"inputType": "Checkbox",
+			"validators": [],
+			"help": "Show/hide items",
+			"translatable": false
+		},
+		
+		"_items": {
+			"type": "array",
+			"required": true,
+			"title": "Items",
+			"items": {
+				"type": "object",
+				"required": true,
+				"properties": {
+					"title": {
+						"type": "string",
+						"required": false,
+						"inputType": "Text",
+						"title": "Item title",
+						"default": "",
+						"validators": [],
+						"help": "This is the item text",
+						"translatable": true
+					},
+					"body": {
+						"type": "string",
+						"required": false,
+						"inputType": "TextArea",
+						"title": "Item body",
+						"default": "",
+						"validators": [],
+						"help": "This is the item body",
+						"translatable": true
+					},				
+					"_classes": {
+						"type": "string",
+						"required": false,
+						"default": "",
+						"title": "Classes",
+						"inputType": "Text",
+						"validators": [],
+						"help": "Classes that are applied to the item"
+					},
+						"on": {
+				"type": "object",
+				"required": true,
+				"title": "State on",
+				"properties": {
+					"label": {
+						"type": "string",
+						"required": false,
+						"inputType": "Text",
+						"title": "Item label",
+						"default": "",
+						"validators": [],
+						"help": "This is the item label",
+						"translatable": true
+					},
+					"title": {
+						"type": "string",
+						"required": false,
+						"inputType": "Text",
+						"title": "Item title",
+						"default": "",
+						"validators": [],
+						"help": "This is the item text",
+						"translatable": true
+					},
+					"body": {
+						"type": "string",
+						"required": false,
+						"inputType": "TextArea",
+						"title": "Item body",
+						"default": "",
+						"validators": [],
+						"help": "This is the item body",
+						"translatable": true
+					},
+					"_graphic": {
+						"type": "object",
+						"required": false,
+						"title": "Graphic",
+						"properties": {
+							"src": {
+								"type": "string",
+								"required": false,
+								"default": "",
+								"inputType": "Asset:image",
+								"validators": [],
+								"help": "Image which will be rendered with the item"
+							},
+							"alt": {
+								"type": "string",
+								"required": false,
+								"default": "",
+								"title": "Alternative text",
+								"inputType": "Text",
+								"validators": [],
+								"help": "A description of the image",
+								"translatable": true
+							}
+						}
+					}
+				}
+			},
+						"off": {
+				"type": "object",
+				"required": true,
+				"title": "State off",
+				"properties": {
+					"label": {
+						"type": "string",
+						"required": false,
+						"inputType": "Text",
+						"title": "Item label",
+						"default": "",
+						"validators": [],
+						"help": "This is the item label",
+						"translatable": true
+					},
+					"title": {
+						"type": "string",
+						"required": false,
+						"inputType": "Text",
+						"title": "Item title",
+						"default": "",
+						"validators": [],
+						"help": "This is the item text",
+						"translatable": true
+					},
+					"body": {
+						"type": "string",
+						"required": false,
+						"inputType": "TextArea",
+						"title": "Item body",
+						"default": "",
+						"validators": [],
+						"help": "This is the item body",
+						"translatable": true
+					},
+					"_graphic": {
+						"type": "object",
+						"required": false,
+						"title": "Graphic",
+						"properties": {
+							"src": {
+								"type": "string",
+								"required": false,
+								"default": "",
+								"inputType": "Asset:image",
+								"validators": [],
+								"help": "Image which will be rendered with the item"
+							},
+							"alt": {
+								"type": "string",
+								"required": false,
+								"default": "",
+								"title": "Alternative text",
+								"inputType": "Text",
+								"validators": [],
+								"help": "A description of the image",
+								"translatable": true
+							}
+						}
+					}
+				}
+			}
+				}
+			}
+		}
+	}
+}

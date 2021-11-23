@@ -1,0 +1,225 @@
+{
+  "$anchor": "toggleItems-component",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$merge": {
+    "source": {
+      "$ref": "component"
+    },
+    "with": {
+      "properties": {
+        "_supportedLayout": {
+          "type": "string",
+          "title": "Supported layout",
+          "default": "full-width",
+          "enum": ["full-width", "half-width", "both"],
+          "_adapt": {
+            "editorOnly": true
+          }
+        },
+        "instruction": {
+          "type": "string",
+          "title": "Instruction",
+          "default": "",
+          "_adapt": {
+            "translatable": true
+          }
+        },
+        "_setCompletionOn": {
+          "type": "string",
+          "title": "Completion criteria",
+          "description": "Whether completion is based on the learner having viewed all the items - or just having viewed the component",
+          "default": "allItems",
+          "enum": ["inview", "allItems"],
+          "_backboneForms": "Select"
+        },
+        "_animateItems": {
+          "type": "boolean",
+          "title": "Animate Items",
+          "description": "Animate the items into view"
+        },
+
+        "_percentInviewVertical": {
+          "type": "number",
+          "title": "Percent in view",
+          "description": "Controls what percentage of the items height needs to be in the viewport in order for the items to animate",
+          "default": 10
+        },
+        "_transitionSpeed": {
+          "type": "number",
+          "title": "Transition speed",
+          "default": 200
+        },
+        "_columns": {
+          "type": "number",
+          "title": "Columns",
+          "default": 0
+        },
+        "_isSequential": {
+          "type": "boolean",
+          "title": "Is Sequential?",
+          "description": "Show/hide items"
+        },
+        "_items": {
+          "type": "array",
+          "title": "Items",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "title": "Item title",
+                "default": "",
+                "_adapt": {
+                  "translatable": true
+                }
+              },
+              "body": {
+                "type": "string",
+                "title": "Item body",
+                "description": "This is the item body text",
+                "default": "",
+                "_adapt": {
+                  "translatable": true
+                },
+                "_backboneForms": "TextArea"
+              },
+              "_classes": {
+                "type": "string",
+                "title": "Custom classes",
+                "description": "Custom classes that are applied to the item",
+                "default": ""
+              },
+              "on": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "title": "Item label",
+                    "default": "",
+                    "_adapt": {
+                      "translatable": true
+                    }
+                  },
+                  "title": {
+                    "type": "string",
+                    "title": "Item title",
+                    "default": "",
+                    "_adapt": {
+                      "translatable": true
+                    }
+                  },
+                  "body": {
+                    "type": "string",
+                    "title": "Item body",
+                    "description": "This is the item body text",
+                    "default": "",
+                    "_adapt": {
+                      "translatable": true
+                    },
+                    "_backboneForms": "TextArea"
+                  },
+                  "_graphic": {
+                    "type": "object",
+                    "title": "Graphic",
+                    "default": {},
+                    "properties": {
+                      "alt": {
+                        "type": "string",
+                        "title": "Alternative text",
+                        "description": "A description of the image",
+                        "default": "",
+                        "_adapt": {
+                          "translatable": true
+                        }
+                      },
+                      "src": {
+                        "type": "string",
+                        "isObjectId": true,
+                        "title": "Source",
+                        "description": "Optional image which will be rendered with the item",
+                        "_backboneForms": {
+                          "type": "Asset",
+                          "media": "image"
+                        }
+                      }
+                    }
+                  },
+                  "_classes": {
+                    "type": "string",
+                    "title": "Custom classes",
+                    "description": "Custom classes that are applied to the item",
+                    "default": ""
+                  }
+                }
+              },
+              "off": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "title": "Item label",
+                    "default": "",
+                    "_adapt": {
+                      "translatable": true
+                    }
+                  },
+                  "title": {
+                    "type": "string",
+                    "title": "Item title",
+                    "default": "",
+                    "_adapt": {
+                      "translatable": true
+                    }
+                  },
+                  "body": {
+                    "type": "string",
+                    "title": "Item body",
+                    "description": "This is the item body text",
+                    "default": "",
+                    "_adapt": {
+                      "translatable": true
+                    },
+                    "_backboneForms": "TextArea"
+                  },
+                  "_graphic": {
+                    "type": "object",
+                    "title": "Graphic",
+                    "default": {},
+                    "properties": {
+                      "alt": {
+                        "type": "string",
+                        "title": "Alternative text",
+                        "description": "A description of the image",
+                        "default": "",
+                        "_adapt": {
+                          "translatable": true
+                        }
+                      },
+                      "src": {
+                        "type": "string",
+                        "isObjectId": true,
+                        "title": "Source",
+                        "description": "Optional image which will be rendered with the item",
+                        "_backboneForms": {
+                          "type": "Asset",
+                          "media": "image"
+                        }
+                      }
+                    }
+                  },
+                  "_classes": {
+                    "type": "string",
+                    "title": "Custom classes",
+                    "description": "Custom classes that are applied to the item",
+                    "default": ""
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

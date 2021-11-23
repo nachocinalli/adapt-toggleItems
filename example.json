@@ -1,0 +1,43 @@
+{
+  "_id": "c-05",
+  "_parentId": "b-05",
+  "_type": "component",
+  "_component": "toggleItems",
+  "_classes": "",
+  "_layout": "full",
+  "title": "Toggle Items",
+  "displayTitle": "Toggle Items",
+  "body": "<p>ToggleItems component allow switch between two possible states</p>",
+  "instruction": "",
+  "_setCompletionOn": "allItems",
+  "_animateItems": true,
+  "_percentInviewVertical": 10,
+  "_transitionSpeed": 200,
+  "_columns": 0,
+  "_isSequential": false,
+  "_items": [
+    {
+      "title": "",
+      "body": "",
+      "on": {
+        "label": "T",
+        "title": "True",
+        "body": "<p>Item true text</p>",
+        "_graphic": {
+          "src": "",
+          "alt": ""
+        }
+      },
+      "off": {
+        "label": "F",
+        "title": "False",
+        "body": "<p>Item false text</p>",
+        "_graphic": {
+          "src": "",
+          "alt": ""
+        }
+      },
+      "_classes": ""
+    }
+  ]
+}
