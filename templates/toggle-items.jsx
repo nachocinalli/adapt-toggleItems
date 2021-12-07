@@ -61,7 +61,7 @@ export default function toggleItems (props) {
                   <span className="toggle__icon toggle__icon-0ff">{off.label}</span>
                 </span>
                 <div className='toggleitems__state-container'>
-                  {off && <div className={classes(['toggleitems__state', !_isActive && 'is-active'])}>
+                  {off && <div className={classes(['toggleitems__state', 'toggleitems__state-0', !_isActive && 'is-active'])}>
                     {off.title &&
                     <div className="toggleitems__item-title">
                       {html(compile(off.title))}
@@ -74,14 +74,14 @@ export default function toggleItems (props) {
                     }
                     { off._graphic.src &&
                       <templates.image {...off._graphic}
-                        classNamePrefixes={['toggleitems__item-state-0']}
+                        classNamePrefixes={['toggleitems__item-state']}
                         attributionClassNamePrefixes={['toggleitems']}
                       />
                     }
 
                   </div>
                   }
-                  {on && <div className={classes(['toggleitems__state', _isActive && 'is-active'])}>
+                  {on && <div className={classes(['toggleitems__state', 'toggleitems__state-1', _isActive && 'is-active'])}>
                     {on.title &&
                   <div className="toggleitems__item-title">
                     {html(compile(on.title))}
@@ -94,7 +94,7 @@ export default function toggleItems (props) {
                     }
                     { on._graphic.src &&
                     <templates.image {...on._graphic}
-                      classNamePrefixes={['toggleitems__item-state-1']}
+                      classNamePrefixes={['toggleitems__item-state']}
                       attributionClassNamePrefixes={['toggleitems']}
                     />
                     }
