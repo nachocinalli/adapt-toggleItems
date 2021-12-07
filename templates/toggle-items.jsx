@@ -58,7 +58,7 @@ export default function toggleItems (props) {
                 />
                 <span className="toggleitems__toggle-display" hidden>
                   <span className="toggle__icon toggle__icon-on">{on.label}</span>
-                  <span className="toggle__icon toggle__icon-0ff">{off.label}</span>
+                  <span className="toggle__icon toggle__icon-off">{off.label}</span>
                 </span>
                 <div className='toggleitems__state-container'>
                   {off && <div className={classes(['toggleitems__state', 'toggleitems__state-0', !_isActive && 'is-active'])}>
