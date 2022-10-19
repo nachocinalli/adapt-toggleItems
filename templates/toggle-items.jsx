@@ -54,7 +54,7 @@ export default function toggleItems (props) {
                   type='checkbox'
                   name={`input-toggle-${props._id}-${_index}`}
                   id={`input-toggle-${props._id}-${_index}`}
-
+                  role="switch"
                 />
                 <span className="toggleitems__toggle-display" hidden>
                   <span className="toggle__icon toggle__icon-on">{on.label}</span>
