@@ -88,13 +88,12 @@
       transition: inherit;
     }
   }
-  &__input:checked + &__toggle-display {
+  &__item.is-active  &__toggle-display {
     background-color: @blue;
     color: @white;
-  }
-
-  &__input:checked + &__toggle-display::before {
-    transform: translate(100%, -50%);
+    &::before {
+      transform: translate(100%, -50%);
+    }
   }
   &__state-container {
     display: inline-flex;
